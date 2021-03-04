@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'customers'], function () {
+    Route::get('/',[\App\Http\Controllers\CustomerController::class, 'index'])->name('customers.index');
 });
